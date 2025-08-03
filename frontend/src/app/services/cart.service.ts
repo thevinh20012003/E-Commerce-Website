@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+
   cartItems: CartItem[] = [];
 
   // use it for public event to Cartcomponent: total price, quantity
@@ -34,13 +35,13 @@ export class CartService {
     }
     else {
       // just add the item to the array
-      this.cartItems.push(theCartItem); 
+      this.cartItems.push(theCartItem);
     }
     this.computeCartTotals();
   }
   computeCartTotals() {
-    let totalPriceValue: number = 0;  
-    let totalQuantityValue: number = 0;  
+    let totalPriceValue: number = 0;
+    let totalQuantityValue: number = 0;
 
     for (let currentCartItem of this.cartItems) {
       totalPriceValue += currentCartItem.quantity * currentCartItem.unitPrice;
@@ -61,5 +62,25 @@ export class CartService {
     }
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
     console.log('----');
+  }
+  decrementQuantity(theCartItem: CartItem) {
+    theCartItem.quantity--;
+
+    if(theCartItem.quantity === 0) {
+      this.remove(theCartItem);
+    }
+    else {
+      this.computeCartTotals();
+    }
+  }
+  remove(theCartItem: CartItem) {
+    // get the index of the item in the array
+    const itemIndex = this.cartItems.findIndex( tempCartItem => tempCartItem.id === theCartItem.id );
+
+    // if found, remove the item from the array at that index
+    if(itemIndex > -1) {
+      this.cartItems.splice(itemIndex, 1);
+      this.computeCartTotals();
+    }
   }
 }
