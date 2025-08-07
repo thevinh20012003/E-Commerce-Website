@@ -370,7 +370,8 @@ input.au-input.au-input-xl{
     display:block;
     color:#555;
     font-size:16px;
-    padding:5px 0
+    padding:5px 0;
+    text-decoration: none;
 }
 
 .navbar-sidebar .navbar-list li a i{
@@ -678,6 +679,14 @@ select{
  * Shopping Cart Details
  * ----------------------------
  */
+button.btn.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+a.btn.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
 
 .table{
     margin:0
