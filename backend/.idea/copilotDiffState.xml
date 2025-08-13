@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/java/com/vinhtt/ecommerce/entity/Address.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/vinhtt/ecommerce/entity/Address.java" />
+              <option name="originalContent" value="package com.vinhtt.ecommerce.entity;&#10;&#10;import jakarta.persistence.*;&#10;import jakarta.persistence.criteria.Order;&#10;import lombok.Getter;&#10;import lombok.Setter;&#10;&#10;@Entity&#10;@Table(name=&quot;address&quot;)&#10;@Getter&#10;@Setter&#10;public class Address {&#10;&#10;    @Id&#10;    @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    @Column(name=&quot;id&quot;)&#10;    private Long id;&#10;&#10;    @Column(name=&quot;street&quot;)&#10;    private String street;&#10;&#10;    @Column(name=&quot;city&quot;)&#10;    private String city;&#10;&#10;    @Column(name=&quot;state&quot;)&#10;    private String state;&#10;&#10;    @Column(name=&quot;country&quot;)&#10;    private String country;&#10;&#10;    @Column(name=&quot;zip_code&quot;)&#10;    private String zipCode;&#10;&#10;    @OneToOne&#10;    @PrimaryKeyJoinColumn&#10;    private Order order;&#10;}" />
+              <option name="updatedContent" value="package com.vinhtt.ecommerce.entity;&#10;&#10;import jakarta.persistence.*;&#10;import lombok.Getter;&#10;import lombok.Setter;&#10;&#10;@Entity&#10;@Table(name=&quot;address&quot;)&#10;@Getter&#10;@Setter&#10;public class Address {&#10;&#10;    @Id&#10;    @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    @Column(name=&quot;id&quot;)&#10;    private Long id;&#10;&#10;    @Column(name=&quot;street&quot;)&#10;    private String street;&#10;&#10;    @Column(name=&quot;city&quot;)&#10;    private String city;&#10;&#10;    @Column(name=&quot;state&quot;)&#10;    private String state;&#10;&#10;    @Column(name=&quot;country&quot;)&#10;    private String country;&#10;&#10;    @Column(name=&quot;zip_code&quot;)&#10;    private String zipCode;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
