@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")
 @RepositoryRestResource
 public interface StateRepository extends JpaRepository<State, Integer> {
-    // This interface will automatically provide CRUD operations for State entity
-    // Additional custom queries can be defined here if needed
+
     List<State> findByCountryCode(@Param("code") String code);
+
 }

@@ -32,9 +32,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         HttpMethod[] theUnsupportedActions = {
-            HttpMethod.POST,
-            HttpMethod.PUT,
-            HttpMethod.DELETE
+                HttpMethod.POST,
+                HttpMethod.PUT,
+                HttpMethod.DELETE
         };
         // disable HTTP methods for ProductCategory: PUT, POST and DELETE
         disableHttpMethods(Product.class, config, theUnsupportedActions);

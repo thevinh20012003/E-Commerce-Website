@@ -1,0 +1,4 @@
+.product-name a {
+  text-decoration: none;
+  color: inherit; /* giữ màu chữ mặc định thay vì xanh */
+}
