@@ -15,6 +15,7 @@ import java.util.UUID;
 
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
+
     private CustomerRepository customerRepository;
 
     @Autowired
@@ -41,6 +42,15 @@ public class CheckoutServiceImpl implements CheckoutService {
         order.setShippingAddress(purchase.getShippingAddress());
         // populate order with customer
         Customer customer = purchase.getCustomer();
+        // check if customer already exists
+
+        String email = customer.getEmail();
+        Customer existingCustomer = customerRepository.findByEmail(email);
+
+// nếu có -> dùng lại customer cũ
+        if (existingCustomer != null) {
+            customer = existingCustomer;
+        }
         customer.add(order);
         // Save to the database
         customerRepository.save(customer);

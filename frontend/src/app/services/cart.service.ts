@@ -63,7 +63,7 @@ export class CartService {
     // log cart data just for debugging purposes
     this.logCartData(totalPriceValue, totalQuantityValue);
 
-    //
+    // persist cart items
     this.persistCartItems();
   }
 
